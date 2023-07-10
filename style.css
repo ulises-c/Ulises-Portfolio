@@ -10,7 +10,7 @@ body{
     display: block;
     margin: auto;
     min-height: 100vh;
-    background: #000d40;
+    background: #191919;
     font-family: sans-serif;
 }
 
@@ -47,6 +47,14 @@ body{
     opacity: 1;
 }
 
+/* home section */
+.home-section.active,
+.project-section.active{
+    position: relative;
+    opacity: 1;
+    z-index: 0;
+}
+
 .home-section{
     width: 100%;
     height: 100vh;
@@ -74,4 +82,103 @@ body{
     width: 50%;
     object-fit: cover;
     opacity: 0.2;
+}
+
+/* projects section */
+.project-section{
+    width: 100%;
+    min-height: 100vh;
+    padding: 150px 100px 100px;
+    position: fixed;
+    top: 0;
+    transition: 1s;
+    opacity: 0;
+}
+
+.project-heading{
+    font-size: 100px;
+    background-color: #252525;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #1a1a1a;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+}
+
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 100px;
+}
+
+.project-card{
+    height: 400px;
+    position: relative;
+}
+
+.project-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit:  cover;
+    transition: 0.2s;
+}
+
+.project-content{
+    position: relative;
+    padding: 40px;
+    color:white;
+    transition: 0.1s;
+    opacity: 0;
+}
+
+.project-title{
+    font-size: 50px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 300;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 1.5px;
+}
+
+.project-info{
+    margin: 40px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 0.8px;
+}
+
+.project-btn-grp{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+}
+
+.project-btn{
+    height: 40px;
+    text-transform: capitalize;
+    font-size: 18px;
+    border: none;
+    background: black;
+    color:white;
+    cursor: pointer;
+}
+
+.project-btn.live{
+    background: none;
+    border: 2px solid white;
+}
+
+.project-card:hover .project-img{
+    filter: blur(20px);
+}
+
+.project-card:hover .project-content{
+    opacity: 1;
 }
